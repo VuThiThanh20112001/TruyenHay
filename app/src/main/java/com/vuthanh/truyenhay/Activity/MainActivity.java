@@ -1,8 +1,10 @@
-package com.vuthanh.truyenhay;
+package com.vuthanh.truyenhay.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.vuthanh.truyenhay.R;
 
 public class MainActivity extends AppCompatActivity {
 

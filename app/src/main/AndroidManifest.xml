@@ -27,13 +27,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activity.TimKiemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.AdminActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.DangKyActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".Activity.DangNhapActivity"
             android:exported="true">
 
             <!-- <intent-filter> -->

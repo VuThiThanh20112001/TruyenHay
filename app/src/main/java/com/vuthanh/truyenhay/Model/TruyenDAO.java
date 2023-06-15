@@ -54,7 +54,7 @@ public class TruyenDAO {
             t.setNoidung(c.getString(3));
             t.setTacgia(c.getString(4));
             //chuyển đối tượng thành chuỗi
-            String chuoi = t.getTieude()+"-"+t.getTacgia()+"\n" + t.getTheloai();
+            String chuoi = t.getMasach()+" - "+t.getTieude()+"-"+t.getTacgia()+"-" + t.getTheloai()+"-"+t.getNoidung();
             ls.add(chuoi);
             c.moveToNext();//di chuyển đến bản ghi tiếp theo
         }

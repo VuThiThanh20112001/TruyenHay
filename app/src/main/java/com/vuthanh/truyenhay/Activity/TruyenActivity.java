@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,6 +81,13 @@ public class TruyenActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
                 }
+               // arrayAdapter.notifyDataSetChanged();
+                // Xóa dữ liệu trong các EditText
+                txtMa.setText("");
+                txtTieuDe.setText("");
+                txtTacGia.setText("");
+                txtTheLoai.setText("");
+                txtNoiDung.setText("");
             }
         });
         btnXoa.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +101,13 @@ public class TruyenActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(context, "xóa thành công", Toast.LENGTH_SHORT).show();
                 }
+                //arrayAdapter.notifyDataSetChanged();
+                // Xóa dữ liệu trong các EditText
+                txtMa.setText("");
+                txtTieuDe.setText("");
+                txtTacGia.setText("");
+                txtTheLoai.setText("");
+                txtNoiDung.setText("");
             }
         });
         btnSua.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +128,28 @@ public class TruyenActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();
                 }
+                //arrayAdapter.notifyDataSetChanged();
+                // Xóa dữ liệu trong các EditText
+                txtMa.setText("");
+                txtTieuDe.setText("");
+                txtTacGia.setText("");
+                txtTheLoai.setText("");
+                txtNoiDung.setText("");
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String chuoi = listView.getItemAtPosition(position).toString(); // Lấy chuỗi từ ListView tại vị trí được chọn
+                String[] chuoiArr = chuoi.split("-"); // Phân tách chuỗi thành mảng các phần tử dựa trên dấu "-"
+
+                // Gán các phần tử từ mảng chuoiArr vào các EditText để chỉnh sửa
+                txtMa.setText(chuoiArr[0].trim()); // Mã sách
+                txtTieuDe.setText(chuoiArr[1].trim()); // Tiêu đề
+                txtTacGia.setText(chuoiArr[2].trim()); // Tác giả
+                txtTheLoai.setText(chuoiArr[3].trim()); // Thể loại
+                txtNoiDung.setText(chuoiArr[4].trim()); // Nội dung
+
             }
         });
 

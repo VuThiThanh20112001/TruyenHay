@@ -6,17 +6,11 @@ import android.os.Bundle;
 
 import com.vuthanh.truyenhay.R;
 
-public class AdminActivity extends AppCompatActivity {
-
-
+public class TimKiemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
-
-
+        setContentView(R.layout.activity_timkiem);
     }
-
-
 }

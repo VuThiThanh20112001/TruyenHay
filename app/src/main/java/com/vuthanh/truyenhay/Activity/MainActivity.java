@@ -1,105 +1,171 @@
 package com.vuthanh.truyenhay.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ViewFlipper;
 
+import com.google.android.material.navigation.NavigationView;
+import com.vuthanh.truyenhay.Adapter.ChuyenMucAdapter;
+import com.vuthanh.truyenhay.Adapter.TaiKhoanAdapter;
+import com.vuthanh.truyenhay.Model.ChuyenMuc;
+import com.vuthanh.truyenhay.Model.TaiKhoan;
 import com.vuthanh.truyenhay.R;
 import com.vuthanh.truyenhay.database.database_dangnhap;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    EditText edtTaiKhoan, edtEmail, edtMatKhau;
-    private TextView dangky;
-    Button btnDangNhap;
+    Toolbar toolbar;
+    ViewFlipper viewFlipper;
+    NavigationView navigationView;
+    DrawerLayout drawerLayout;
+    ListView listView,listViewTaiKhoan, listViewNew;
 
-    // tạo đối thượng cho databasedangnhap
-    database_dangnhap database_danhnhap;
+    String tentaikhoan;
+
+
+    database_dangnhap database_dangnhap;
+
+    TaiKhoanAdapter TaiKhoanAdapter;
+    ChuyenMucAdapter ChuyenMucAdapter;
+
+
+    ArrayList<TaiKhoan> taiKhoanArrayList;
+
+    ArrayList<ChuyenMuc> chuyenMucArrayList;
+
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        database_dangnhap = new database_dangnhap(this);
+
+        // Nhận dữ liệu đăng nhập gửi
+        Intent intentpq = getIntent();
+        int i = intentpq.getIntExtra("phanq", 0);
+        int idd = intentpq.getIntExtra("idd",0);
+        tentaikhoan = intentpq.getStringExtra("tentaikhoan");
+
         AnhXa();
-        // đối tượng databasedangnhap
-        database_danhnhap = new database_dangnhap(this);
+        ActionBar();
 
-        // tạo sự kiến click vào textview đăng ký chuyển sang màn hình đăng ký với Intent
-        dangky = (TextView) findViewById(R.id.dangky);
-        dangky.setOnClickListener(new View.OnClickListener() {
+        //Bắt click item cho listview
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DangKyActivity.class);
-                startActivity(intent);
-            }
-        });
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    if(i == 2){
 
-        // tạo sự kiến click vào button đăng nhập chuyển sang màn hình chính với Intent
-      
-        btnDangNhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Gán cho các biến là giá tr nhập từ EditText
-                String tentaikhoan = edtTaiKhoan.getText().toString();
-                String email = edtEmail.getText().toString();
-                String matkhau = edtMatKhau.getText().toString();
-
-                // Sử dụng con trỏ để lấy dữ liệu, gọi tới getData() để lấy dữ liệu tất cả tài khoản ở databse
-                Cursor cursor = database_danhnhap.getData();
-
-                // Thực hiện vòng lặp để lấy dữ liệu từ cursor với moveToNext() để di chuyển tiếp
-                while (cursor.moveToNext()){
-
-                    //Lấy dữ liệu và gán vào biến, dữ liệu tài khoản ở ô 1, email ở 2 và mật khẩu ở ô 3
-                    // idtaikhoan là ô 0, phân quyền là ô 4
-                    String datatentaikhoan = cursor.getString(1);
-                    String dataemail = cursor.getString(2);
-                    String datamatkhau = cursor.getString(3);
-
-                    //Nếu tài khoản, email và mật khẩu vào từ bàn phím khớp với databse
-                    if(datatentaikhoan.equals(tentaikhoan) && dataemail.equals(email) && datamatkhau.equals(matkhau)){
-                        //Lấy dữ liệu phân quyền và id
-                        int phanquyen = cursor.getInt(4);
-                        int idd = cursor.getInt(0);
-                        String tentk = cursor.getString(1);
-                        String emailtk = cursor.getString(2);
-
-                        //Chuyển qua màn hình AdminActivity
-                        Intent intent = new Intent(MainActivity.this, AdminActivity.class );
-
-                        //gửi dữ liệu qua Activitu là AdminActivity
-                        intent.putExtra("phanq",phanquyen);
-                        intent.putExtra("idd",idd);
-                        intent.putExtra("email",emailtk);
-                        intent.putExtra("tentaikhoan",tentk);
-
-                        startActivity(intent);
-
+                    }else{
+                        Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();
+                        Log.e("Người dùng : ", "Bạn không có quyền truy cập");
                     }
+                } else if (position == 1) {
+
+                } else if (position == 2) {
+                    finish();
 
                 }
-                //Thực hiện trả cursor về đầu
-                cursor.moveToFirst();
-                //đóng khi không dùng
-                cursor.close();
-
             }
         });
 
+
+
+
+    }
+    //Thanh actionbar với toolbar
+    @SuppressLint("RestrictedApi")
+    private void ActionBar(){
+        // Hàm hỗ trợ toolbar
+        setSupportActionBar(toolbar);
+
+        // set nút cho actionbar
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+
+        // Tạo icon cho toolbar
+        toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
     }
 
     private void AnhXa(){
-        edtTaiKhoan = findViewById(R.id.taikhoan);
-        edtEmail = findViewById(R.id.email);
-        edtMatKhau = findViewById(R.id.matkhau);
-        btnDangNhap = findViewById(R.id.btn_dangnhap);
-        dangky = findViewById(R.id.dangky);
+        viewFlipper = findViewById(R.id.viewflipper);
+        toolbar = findViewById(R.id.toolbartopthinhhanh);
+        drawerLayout = findViewById(R.id.drawerlayout);
+        navigationView = findViewById(R.id.nagigationView);
+        listViewTaiKhoan = findViewById(R.id.listviewtaikhoan);
+        listView = findViewById(R.id.listviewmanhinhchinh);
+
+        listViewTaiKhoan = findViewById(R.id.listviewtaikhoan);
+        listView = findViewById(R.id.listviewmanhinhchinh);
+
+        // Thông tin tài khoản
+        taiKhoanArrayList = new ArrayList<>();
+        taiKhoanArrayList.add(new TaiKhoan(tentaikhoan));
+
+        TaiKhoanAdapter = new TaiKhoanAdapter(this,R.layout.activity_personal,taiKhoanArrayList);
+        listViewTaiKhoan.setAdapter(TaiKhoanAdapter);
+
+        //Chuyên mục
+        chuyenMucArrayList = new ArrayList<>();
+        chuyenMucArrayList.add(new ChuyenMuc("Người dùng", R.drawable.person));
+        chuyenMucArrayList.add(new ChuyenMuc("Đổi mật khẩu", R.drawable.lock));
+        chuyenMucArrayList.add(new ChuyenMuc("Đăng xuất", R.drawable.log_out));
+
+        ChuyenMucAdapter = new ChuyenMucAdapter(this,R.layout.chuyenmuc,chuyenMucArrayList);
+        listView.setAdapter(ChuyenMucAdapter);
     }
 
+    // Nạp 1 tìm kiếm vào actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        // Nếu click vaofg icon tìm kiếm chuển qua màn hình tìm kiem
+        switch (item.getItemId()){
+            case R.id.menu1:
+                Intent intent = new Intent(MainActivity.this, TimKiemActivity.class);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -1,113 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đăng nhập"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
 
-    <EditText
-        android:id="@+id/taikhoan"
-        android:layout_width="340dp"
-        android:layout_height="55dp"
-        android:background="@drawable/vien"
-        android:ems="10"
-        android:hint="Tài khoản"
-        android:inputType="text"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+ <androidx.drawerlayout.widget.DrawerLayout
+     android:id="@+id/drawerlayout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="340dp"
-        android:layout_height="55dp"
-        android:background="@drawable/vien"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+     <LinearLayout
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/matkhau"
-        android:layout_width="340dp"
-        android:layout_height="55dp"
-        android:background="@drawable/vien"
-        android:ems="10"
-        android:hint="Mật khẩu"
-        android:inputType="numberPassword"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+         <androidx.appcompat.widget.Toolbar
+             android:id="@+id/toolbartopthinhhanh"
+             app:title="Top Thịnh Hành"
 
-    <Button
-        android:id="@+id/btn_dangnhap"
-        android:layout_width="340dp"
-        android:layout_height="55dp"
-        android:background="@drawable/bg_dangnhap"
-        android:textSize="17dp"
-        android:text="Đăng nhập"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bạn chưa có tài khoản?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+         <ViewFlipper
+             android:id="@+id/viewflipper"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"></ViewFlipper>
 
-    <TextView
-        android:id="@+id/dangky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đăng ký ngay"
-        android:textColor="#FF9800"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+         <LinearLayout
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+             <TextView
+
+                 android:id="@+id/txttruyen"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:text="Truyện mới cập nhật"
+                 android:textSize="20dp"
+                 android:textStyle="bold"></TextView>
+
+             <ListView
+                 android:id="@+id/listviewNew"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"></ListView>
+         </LinearLayout>
+     </LinearLayout>
+
+     <com.google.android.material.navigation.NavigationView
+         android:id="@+id/nagigationView"
+         android:layout_gravity="start"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <ListView
+             android:id="@+id/listviewtaikhoan"
+             android:layout_width="match_parent"
+             android:layout_height="150dp"></ListView>
+
+         <ListView
+             android:id="@+id/listviewmanhinhchinh"
+             android:layout_marginTop="150dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"></ListView>
+
+
+     </com.google.android.material.navigation.NavigationView>
+
+ </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+</LinearLayout>

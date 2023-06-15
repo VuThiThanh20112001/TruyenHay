@@ -18,10 +18,11 @@ public class TaiKhoan {
         this.mPhanQuyen = mPhanQuyen;
     }
 
-    public TaiKhoan(String mTenTaiKhoan, String mEmail) {
+    public TaiKhoan(String mTenTaiKhoan) {
         this.mTenTaiKhoan = mTenTaiKhoan;
         this.mEmail = mEmail;
     }
+
 
     public int getmId() {
         return mId;

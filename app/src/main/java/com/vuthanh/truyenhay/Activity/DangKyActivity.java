@@ -69,30 +69,6 @@ public class DangKyActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-//                if(taikhoan.equals("")){
-//                    Toast.makeText(getApplicationContext(), "Vui lòng nhập tên tài khoản", Toast.LENGTH_SHORT).show();
-//                    return;
-//                } else if (email.equals("")) {
-//                    Toast.makeText(getApplicationContext(), "Vui lòng nhập email", Toast.LENGTH_SHORT).show();
-//                    return;
-//                } else if (matkhau.equals("")) {
-//                    Toast.makeText(getApplicationContext(), "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
-//                    return;
-//                } else if (nhaplaimk.equals("")) {
-//                    Toast.makeText(getApplicationContext(), "Vui lòng nhập lại mật khẩu", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }else if (!matkhau.equals(nhaplaimk)) {
-//                    Toast.makeText(getApplicationContext(), "Mật khẩu không khớp", Toast.LENGTH_SHORT).show();
-//                    return;
-//               } else{
-//                    database_dangnhap.AddTaiKhoan(taikhoan1);
-//                    Toast.makeText(DangKyActivity.this, "Đăng ký thành công",Toast.LENGTH_SHORT).show();
-//
-//                    Intent intent = new Intent(DangKyActivity.this, MainActivity.class);
-//                    startActivity(intent);
-//                }
-
-
             }
         });
 

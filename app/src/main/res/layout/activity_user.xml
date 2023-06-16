@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".Activity.TruyenActivity">
+    tools:context=".Activity.UserActivity">
 
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_height="61dp"
             android:background="@color/color_app"
             android:gravity="center_vertical"
-            android:text="Welcome to the admin dashboard"
+            android:text="Người dùng"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -35,24 +35,15 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editMaSach"
+            android:id="@+id/editTaiKhoan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Mã Sách"
+            android:hint="Tài khoản"
             android:inputType="text"
             android:padding="16dp" />
 
-        <EditText
-            android:id="@+id/editTieuDe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Tiêu Đề"
-            android:inputType="text"
-            android:padding="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,24 +53,15 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTheLoai"
+            android:id="@+id/editEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Thể Loại"
+            android:hint="Email"
             android:inputType="text"
             android:padding="16dp" />
 
-        <EditText
-            android:id="@+id/editTacGia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Tác Giả"
-            android:inputType="text"
-            android:padding="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -88,25 +70,32 @@
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editNoiDung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Nội Dung"
-            android:inputType="text"
-            android:padding="16dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="19dp"
+            android:text="Phân quyền"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"></TextView>
+
+
+        <Spinner
+            android:id="@+id/spn_phanquyen"
+            android:background="@android:color/transparent"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnThem"
+            android:id="@+id/btnThemUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -115,7 +104,7 @@
             android:textColor="#ffffff" />
 
         <Button
-            android:id="@+id/btnSua"
+            android:id="@+id/btnSuaUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,7 +113,7 @@
             android:textColor="#ffffff" />
 
         <Button
-            android:id="@+id/btnXoa"
+            android:id="@+id/btnXoaUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -133,7 +122,7 @@
             android:textColor="#ffffff" />
 
         <Button
-            android:id="@+id/btnHienThi"
+            android:id="@+id/btnHienThiUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -149,8 +138,9 @@
         android:layout_marginTop="20dp">
 
         <ListView
-            android:id="@+id/lv"
+            android:id="@+id/listviewUser"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
+
 </LinearLayout>

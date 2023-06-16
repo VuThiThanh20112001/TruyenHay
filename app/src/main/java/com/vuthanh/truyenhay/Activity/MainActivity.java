@@ -79,13 +79,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
-                    if(i == 2){
+                    if(i == 1){
+                        Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                       // Gửi id tài khoản qua màn User
+                        intent.putExtra("Id",idd);
+                        startActivity(intent);
 
                     }else{
                         Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();
                         Log.e("Người dùng : ", "Bạn không có quyền truy cập");
                     }
                 } else if (position == 1) {
+                    if(i == 1){
+                        Intent intent = new Intent(MainActivity.this,TruyenActivity.class);
+                        startActivity(intent);
+
+                    }else {
+                        Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();
+                        Log.e("Đăng bài : ", "Bạn không có quyền truy cập");
+                    }
 
                 } else if (position == 2) {
                     finish();
@@ -139,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         //Chuyên mục
         chuyenMucArrayList = new ArrayList<>();
         chuyenMucArrayList.add(new ChuyenMuc("Người dùng", R.drawable.person));
-        chuyenMucArrayList.add(new ChuyenMuc("Đổi mật khẩu", R.drawable.lock));
+        chuyenMucArrayList.add(new ChuyenMuc("Đăng bài", R.drawable.post));
         chuyenMucArrayList.add(new ChuyenMuc("Đăng xuất", R.drawable.log_out));
 
         ChuyenMucAdapter = new ChuyenMucAdapter(this,R.layout.chuyenmuc,chuyenMucArrayList);

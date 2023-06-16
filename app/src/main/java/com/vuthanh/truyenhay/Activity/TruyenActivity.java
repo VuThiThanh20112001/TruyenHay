@@ -4,12 +4,14 @@ package com.vuthanh.truyenhay.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class TruyenActivity extends AppCompatActivity {
     TruyenDAO truyenDAO;
     List<String> list = new ArrayList<>();//tạo list rỗng
     Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,9 @@ public class TruyenActivity extends AppCompatActivity {
         list=truyenDAO.getAllTruyenToString();
         arrayAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
         listView.setAdapter(arrayAdapter);
+
+
+
         //xử lý nút hiển thị
         btnHienThi.setOnClickListener(new View.OnClickListener() {
             @Override

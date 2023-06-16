@@ -2,11 +2,8 @@ package com.vuthanh.truyenhay.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,7 +89,7 @@ public class DangKyActivity extends AppCompatActivity {
         String nhaplaimk = edtDKNhapLaiMK.getText().toString();
         int phanquyen = 2;
 
-        TaiKhoan tk = new TaiKhoan(taikhoan,email,matkhau,nhaplaimk,phanquyen);
+        TaiKhoan tk = new TaiKhoan(taikhoan,email,matkhau);
 
         return tk;
 

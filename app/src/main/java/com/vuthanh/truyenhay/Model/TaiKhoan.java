@@ -11,7 +11,7 @@ public class TaiKhoan {
     private int mPhanQuyen;
 
     // Hàm khởi tạo
-    public TaiKhoan(String mTenTaiKhoan, String mEmail, String mMatKhau, String nhaplaimk, int mPhanQuyen) {
+    public TaiKhoan(String mTenTaiKhoan, String mEmail, String mMatKhau) {
         this.mTenTaiKhoan = mTenTaiKhoan;
         this.mEmail = mEmail;
         this.mMatKhau = mMatKhau;

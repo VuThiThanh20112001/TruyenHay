@@ -13,18 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TruyenHay"
         tools:targetApi="31">
-<!--        <meta-data-->
-<!--            android:name="com.google.android.actions"-->
-<!--            android:resource="@xml/button" />-->
-
+        <activity
+            android:name=".Activity.UserActivity"
+            android:exported="false" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.actions" -->
+        <!-- android:resource="@xml/button" /> -->
         <activity
             android:name=".Activity.TruyenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".Activity.TimKiemActivity"
@@ -41,13 +45,11 @@
         <activity
             android:name=".Activity.DangNhapActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

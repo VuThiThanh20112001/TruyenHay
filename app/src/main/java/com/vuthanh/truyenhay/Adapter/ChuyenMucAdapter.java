@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.vuthanh.truyenhay.Model.ChuyenMuc;
 import com.vuthanh.truyenhay.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChuyenMucAdapter  extends BaseAdapter {
@@ -24,6 +25,7 @@ public class ChuyenMucAdapter  extends BaseAdapter {
         this.layout = layout;
         this.chuyenMucList = chuyenMucList;
     }
+
 
     @Override
     public int getCount() {

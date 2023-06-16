@@ -1,7 +1,6 @@
 package com.vuthanh.truyenhay.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -9,18 +8,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -80,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
                     if(i == 1){
-                        Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
                        // Gửi id tài khoản qua màn User
                         intent.putExtra("Id",idd);
                         startActivity(intent);

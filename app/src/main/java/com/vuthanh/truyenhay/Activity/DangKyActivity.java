@@ -89,7 +89,7 @@ public class DangKyActivity extends AppCompatActivity {
         String nhaplaimk = edtDKNhapLaiMK.getText().toString();
         int phanquyen = 2;
 
-        TaiKhoan tk = new TaiKhoan(taikhoan,email,matkhau);
+        TaiKhoan tk = new TaiKhoan(taikhoan);
 
         return tk;
 

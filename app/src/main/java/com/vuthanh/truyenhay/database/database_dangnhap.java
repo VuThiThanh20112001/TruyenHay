@@ -97,4 +97,6 @@ public class database_dangnhap extends SQLiteOpenHelper {
 
     }
 
+    // Thêm tài khoản
+
 }

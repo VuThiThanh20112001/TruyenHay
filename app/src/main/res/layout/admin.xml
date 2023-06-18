@@ -4,28 +4,82 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textviewTenTaiKhoan"
+            android:textSize="22dp"
+            android:gravity="center"
+            android:text="Tên tài khoản"
+            android:layout_width="220dp"
+            android:layout_height="50dp"></TextView>
+
+    </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/textviewTenTaiKhoan"
-        android:textSize="22dp"
-        android:gravity="center"
-        android:text="Tên tài khoản"
-        android:layout_width="280dp"
-        android:layout_height="50dp"></TextView>
-
-
-
-    <ImageView
-        android:id="@+id/imgsua"
+    <ImageButton
+        android:id="@+id/imghienthi"
         android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
-        android:layout_height="50dp"></ImageView>
 
-    <ImageView
-        android:layout_marginLeft="10dp"
-        android:id="@+id/imgxoa"
-        android:layout_width="50dp"
-        android:layout_height="50dp"></ImageView>
+        android:contentDescription="HienThi"
+        android:src="@drawable/ic_subject"></ImageButton>
+
+
+        <ImageButton
+            android:id="@+id/imgsua"
+            android:src="@drawable/ic_edit"
+            android:layout_width="50dp"
+            android:layout_marginLeft="10dp"
+
+            android:contentDescription="Sua"
+            android:layout_height="50dp"></ImageButton>
+
+        <ImageButton
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imgxoa"
+            android:src="@drawable/ic_delete"
+
+            android:contentDescription="Xoa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"></ImageButton>
+
+
+
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textviewTenTaiKhoan"-->
+<!--        android:textSize="22dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Tên tài khoản"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="50dp"></TextView>-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imghienthi"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_height="50dp"></ImageView>-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imgsua"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_height="50dp"></ImageView>-->
+
+<!--    <ImageView-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:id="@+id/imgxoa"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"></ImageView>-->
+
 
 </LinearLayout>

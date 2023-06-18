@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<ChuyenMuc> chuyenMucArrayList;
 
+    ImageView imgQuayLai;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         AnhXa();
         ActionBar();
 
+       // imgQuayLai = findViewById(R.id.imgQuayLai);
+
         //Bắt click item cho listview
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -78,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                        // Gửi id tài khoản qua màn User
                         intent.putExtra("Id",idd);
                         startActivity(intent);
+
+
 
                     }else{
                         Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();

@@ -9,6 +9,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.vuthanh.truyenhay.Model.Admin;
 import com.vuthanh.truyenhay.Model.TaiKhoan;
 
 public class database_dangnhap extends SQLiteOpenHelper {
@@ -66,8 +67,10 @@ public class database_dangnhap extends SQLiteOpenHelper {
 
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
 
     }
 
@@ -84,6 +87,7 @@ public class database_dangnhap extends SQLiteOpenHelper {
 
         // Thực hiện insert thông qua ContenValues
         ContentValues values = new ContentValues();
+
         values.put(TEN_TAIKHOAN,taiKhoan.getmTenTaiKhoan());
         values.put(EMAIL,taiKhoan.getmEmail());
         values.put(MAT_KHAU,taiKhoan.getmMatKhau());
@@ -97,6 +101,48 @@ public class database_dangnhap extends SQLiteOpenHelper {
 
     }
 
-    // Thêm tài khoản
+    public void AddAdmin(Admin admin){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Thực hiện insert thông qua ContenValues
+        ContentValues values = new ContentValues();
+
+        values.put(TEN_TAIKHOAN,admin.getTenadmin());
+        values.put(EMAIL,admin.getEmailadmin());
+        values.put(MAT_KHAU,admin.getMatkhauadmin());
+        values.put(PHAN_QUYEN,admin.getPhanquyenadmin());
+
+        db.insert(TABLE_TAIKHOAN, null,values);
+
+        // đóng lại khi không dùng
+        db.close();
+        Log.e("ADD TK", "TC");
+
+    }
+
+    // getWritableDatabase: là cả đọc và ghi
+    //getReadableDatabase: chỉ đọc, không được phép chỉnh sửa
+    //Cập nhật
+    public boolean UpdateAdmin(Admin admin, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TEN_TAIKHOAN,admin.getTenadmin());
+        values.put(EMAIL,admin.getEmailadmin());
+        values.put(MAT_KHAU,admin.getMatkhauadmin());
+        values.put(PHAN_QUYEN,admin.getPhanquyenadmin());
+
+        db.update(TABLE_TAIKHOAN,values, ID_TAIKHOAN+" = "+id,null);
+        return true;
+    }
+
+    public int DeleteAdmin(int i){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int res = db.delete(TABLE_TAIKHOAN,ID_TAIKHOAN+" = "+i, null);
+        return res;
+    }
+
+
+
 
 }

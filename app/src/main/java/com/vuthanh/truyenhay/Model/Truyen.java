@@ -6,7 +6,7 @@ public class Truyen {
     public Truyen() {
     }
 
-    public Truyen(String masach,String tieude,String theloai,String noidung,String tacgia ) {
+    public Truyen(String masach,String tieude,String theloai,String noidung,String tacgia) {
         this.masach=masach;
         this.tieude=tieude;
         this.theloai=theloai;

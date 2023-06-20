@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     SQLiteTruyen sqLiteTruyen;
     TruyenAdapter truyenAdapter;
     ArrayList<TruyenTC> truyenArrayList;
+    ImageView imgQuayLai;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+       // imgQuayLai = findViewById(R.id.imgQuayLai);
+
         //Bắt click item cho listview
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -104,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                        // Gửi id tài khoản qua màn User
                         intent.putExtra("Id",idd);
                         startActivity(intent);
+
+
 
                     }else{
                         Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();

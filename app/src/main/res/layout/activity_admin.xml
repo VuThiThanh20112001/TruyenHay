@@ -12,10 +12,20 @@
         android:layout_height="wrap_content"
         android:background="@color/color_app"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+       >
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgQuayLai"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:src="@drawable/ic_back_white"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="40dp"></ImageView>-->
 
         <TextView
             android:id="@+id/textView4"
+            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/color_app"
@@ -32,13 +42,14 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ListView
             android:id="@+id/listViewAdmin"
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
-            android:layout_height="500dp"></ListView>
+            android:layout_height="500dp"
+            android:layout_marginTop="30dp"></ListView>
 
     </LinearLayout>
 
@@ -46,12 +57,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        >
+       >
 
         <Button
             android:id="@+id/btnAddAdmin"
             android:layout_width="350dp"
-            android:layout_height="55dp"
+            android:layout_height="58dp"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="10dp"
             android:text="Add Admin"

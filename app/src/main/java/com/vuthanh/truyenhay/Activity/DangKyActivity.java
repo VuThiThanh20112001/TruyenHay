@@ -62,7 +62,7 @@ public class DangKyActivity extends AppCompatActivity {
                     database_dangnhap.AddTaiKhoan(taikhoan1);
                     Toast.makeText(DangKyActivity.this, "Đăng ký thành công",Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(DangKyActivity.this, MainActivity.class);
+                    Intent intent = new Intent(DangKyActivity.this, DangNhapActivity.class);
                     startActivity(intent);
                 }
 

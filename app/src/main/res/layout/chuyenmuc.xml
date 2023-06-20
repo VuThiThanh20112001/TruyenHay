@@ -6,15 +6,18 @@
 
     <ImageView
         android:id="@+id/imgchuyenmuc"
+        android:layout_marginLeft="50dp"
         android:layout_width="50dp"
         android:layout_height="50dp"></ImageView>
 
     <TextView
         android:id="@+id/textviewTenchuyenmuc"
-        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Tên chuyên mục"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></TextView>
+        android:textSize="22dp"></TextView>
+
+
 
 </LinearLayout>

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.UserActivity">
-
+    tools:context=".Activity.SuaThongTinTKActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:layout_height="wrap_content"
             android:background="@color/color_app"
             android:gravity="center_vertical"
-            android:text="ADD User"
+            android:text="Sửa Thông Tin Tài Khoản"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:padding="15dp"/>
@@ -39,7 +38,7 @@
         >
 
         <EditText
-            android:id="@+id/editTaiKhoan"
+            android:id="@+id/editSuaTaiKhoan"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -58,7 +57,7 @@
         >
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/editSuaEmail"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -74,25 +73,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
-       >
+        >
 
-        <TextView
-            android:layout_marginLeft="30dp"
-            android:textSize="19dp"
-            android:text="Phân quyền"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"></TextView>
-
-
-        <Spinner
-            android:id="@+id/spn_phanquyen"
-            android:background="@drawable/vien"
-
-            android:padding="15dp"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/editSuaMatKhau"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"></Spinner>
+            android:layout_marginLeft="30dp"
+            android:ems="10"
+            android:hint="Mật khẩu"
+            android:inputType="text"
+            android:padding="16dp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/editSuaPhanQuyen"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:ems="10"
+            android:hint="Phân quyền"
+            android:inputType="text"
+            android:padding="16dp" />
 
     </LinearLayout>
 
@@ -104,19 +114,15 @@
         android:gravity="bottom">
 
         <Button
-            android:id="@+id/btnThemUser"
-            android:layout_marginLeft="50dp"
+            android:id="@+id/btnSuaTaiKhoan"
+            android:layout_marginLeft="100dp"
             android:layout_marginBottom="80dp"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="55dp"
             android:background="@drawable/button"
-            android:text="Thêm"
+            android:text="Cập nhật "
             android:textColor="#ffffff" />
-
 
     </LinearLayout>
 
-
-
-
-</LinearLayout>
+    </LinearLayout>

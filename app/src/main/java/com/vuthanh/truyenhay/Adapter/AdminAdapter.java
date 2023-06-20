@@ -5,35 +5,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.vuthanh.truyenhay.Activity.AdminActivity;
 import com.vuthanh.truyenhay.Model.Admin;
-import com.vuthanh.truyenhay.Model.ChuyenMuc;
-import com.vuthanh.truyenhay.Model.TaiKhoan;
 import com.vuthanh.truyenhay.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class AdminAdapter extends BaseAdapter {
 
-    private Context context;
+    private AdminActivity context;
+    private ArrayList<Admin> adminArrayList;
 
-    private List<Admin> adminList;
-
-    public AdminAdapter(Context context, List<Admin> adminList) {
+    public AdminAdapter(AdminActivity context, ArrayList<Admin> adminArrayList) {
         this.context = context;
-        this.adminList = adminList;
+        this.adminArrayList = adminArrayList;
     }
 
     @Override
     public int getCount() {
-         return adminList.size();
+        return adminArrayList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return adminList.get(position);
+        return adminArrayList.get(position);
     }
 
     @Override
@@ -41,31 +39,48 @@ public class AdminAdapter extends BaseAdapter {
         return position;
     }
 
-    public class ViewHolder{
-        TextView txtTenTaiKhoan;
-        ImageView imgEdit;
-        ImageView imgDelete;
-    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
-        viewHolder = new ViewHolder();
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         convertView = inflater.inflate(R.layout.admin, null);
 
-        viewHolder.txtTenTaiKhoan = convertView.findViewById(R.id.textviewTenTaiKhoan);
-        viewHolder.imgEdit = convertView.findViewById(R.id.imgsua);
-        viewHolder.imgDelete = convertView.findViewById(R.id.imgxoa);
+        TextView txtTaiKhoan = convertView.findViewById(R.id.textviewTenTaiKhoan);
+
+        ImageButton imgHienThi = convertView.findViewById(R.id.imghienthi);
+        ImageButton imgSua = convertView.findViewById(R.id.imgsua);
+        ImageButton imgXoa = convertView.findViewById(R.id.imgxoa);
+
+        Admin admin = adminArrayList.get(position);
+
+        txtTaiKhoan.setText(admin.getTenadmin()+"");
+
+        int id = admin.getId();
+
+        imgHienThi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.information(id);
+
+            }
+        });
+
+        imgSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.update(id);
 
 
-        Admin ad = adminList.get(position);
-        viewHolder.txtTenTaiKhoan.setText(ad.getTenadmin());
+            }
+        });
 
-        viewHolder.imgEdit.setImageResource(ad.getHinhanhadminSua());
-        viewHolder.imgDelete.setImageResource(ad.getHinhanhadminXoa());
+        imgXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.delete(id);
+            }
+        });
         return convertView;
     }
 }

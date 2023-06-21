@@ -12,14 +12,15 @@ import com.vuthanh.truyenhay.Model.Truyen;
 import com.vuthanh.truyenhay.Model.TruyenTC;
 import com.vuthanh.truyenhay.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TruyenAdapter extends BaseAdapter {
 
     private Context context;
-    private List<TruyenTC> listTruyen;
+    private List<Truyen> listTruyen;
 
-    public TruyenAdapter(Context context, List<TruyenTC> listTruyen) {
+    public TruyenAdapter(Context context, List<Truyen> listTruyen) {
         this.context = context;
         this.listTruyen = listTruyen;
     }
@@ -39,6 +40,11 @@ public class TruyenAdapter extends BaseAdapter {
         return position;
     }
 
+    public void filterList(ArrayList<Truyen> filteredlist) {
+        listTruyen = filteredlist;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder{
         TextView txtTenTruyen;
         ImageView imgtruyen;
@@ -56,9 +62,9 @@ public class TruyenAdapter extends BaseAdapter {
         viewHolder.imgtruyen = convertView.findViewById(R.id.imgtruyen);
         convertView.setTag(viewHolder);
 
-        TruyenTC truyen = listTruyen.get(position);
-        viewHolder.txtTenTruyen.setText(truyen.getTen());
-        viewHolder.imgtruyen.setImageResource(truyen.getHinh());
+        Truyen truyen = listTruyen.get(position);
+        viewHolder.txtTenTruyen.setText(truyen.getTieude());
+       // viewHolder.imgtruyen.setImageResource(truyen.getHinh());
 
         return convertView;
     }

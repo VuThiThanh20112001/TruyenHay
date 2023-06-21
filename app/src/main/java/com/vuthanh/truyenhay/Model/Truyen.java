@@ -2,11 +2,12 @@ package com.vuthanh.truyenhay.Model;
 
 public class Truyen {
     private String masach,tieude,theloai,noidung,tacgia;
+    int hinh;
 
     public Truyen() {
     }
 
-    public Truyen(String masach,String tieude,String theloai,String noidung,String tacgia) {
+    public Truyen(String masach,String tieude,String theloai,String noidung,String tacgia,int hinh) {
         this.masach=masach;
         this.tieude=tieude;
         this.theloai=theloai;
@@ -52,5 +53,13 @@ public class Truyen {
 
     public void setTacgia(String tacgia) {
         this.tacgia = tacgia;
+    }
+
+    public int getHinh() {
+        return hinh;
+    }
+
+    public void setHinh(int hinh) {
+        this.hinh = hinh;
     }
 }

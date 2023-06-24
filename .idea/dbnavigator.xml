@@ -5,6 +5,22 @@
     <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
+  <component name="DBNavigator.Project.DataExportManager">
+    <export-instructions>
+      <create-header value="true" />
+      <friendly-headers value="false" />
+      <quote-values-containing-separator value="true" />
+      <quote-all-values value="false" />
+      <value-separator value="" />
+      <file-name value="" />
+      <file-location value="" />
+      <scope value="GLOBAL" />
+      <destination value="FILE" />
+      <format value="EXCEL" />
+      <charset value="windows-1252" />
+      <charset value="windows-1252" />
+    </export-instructions>
+  </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
@@ -31,6 +47,12 @@
         <condition column="masach" operator="=" value="1" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="55a836a4-ee25-4464-98b1-66f2d132d443" dataset="main.sqlite_sequence" active-filter-id="8338c9a6-73e3-4ea4-8aea-56d3442c7cbc">
+      <filter id="8338c9a6-73e3-4ea4-8aea-56d3442c7cbc" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="name" operator="&gt;" value="1" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="55a836a4-ee25-4464-98b1-66f2d132d443" dataset="main.android_metadata" active-filter-id="" />
     <filter-actions connection-id="55a836a4-ee25-4464-98b1-66f2d132d443" dataset="main.taikhoan" active-filter-id="1991ab50-d72b-423d-bacf-a5bcb17456a9">
       <filter id="1991ab50-d72b-423d-bacf-a5bcb17456a9" name="0" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="idtaikhoan" operator="&gt;" value="0" active="true" />

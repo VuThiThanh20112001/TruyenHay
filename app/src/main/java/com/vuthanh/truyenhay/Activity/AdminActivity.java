@@ -104,19 +104,19 @@ public class AdminActivity extends AppCompatActivity {
 //
 //        TaiKhoanAdapter = new TaiKhoanAdapter(this,R.layout.activity_personal,taiKhoanArrayList);
 
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout);
-        imgQuayLai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                drawerLayout.openDrawer(GravityCompat.START);
-
-//                Intent intent = new Intent(AdminActivity.this, ActionBar.class);
-//                // Gửi id tài khoản qua màn User
-//               // intent.putExtra("Id",idd);
-//                startActivity(intent);
-            }
-        });
+//        imgQuayLai.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                drawerLayout.openDrawer(GravityCompat.START);
+//
+////                Intent intent = new Intent(AdminActivity.this, ActionBar.class);
+////                // Gửi id tài khoản qua màn User
+////               // intent.putExtra("Id",idd);
+////                startActivity(intent);
+//            }
+//        });
 
 
     }

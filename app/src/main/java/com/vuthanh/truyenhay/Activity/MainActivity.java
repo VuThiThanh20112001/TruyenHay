@@ -196,9 +196,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nagigationView);
         listViewTaiKhoan = findViewById(R.id.listviewtaikhoan);
         listView = findViewById(R.id.listviewmanhinhchinh);
-
-        listViewTaiKhoan = findViewById(R.id.listviewtaikhoan);
-        listView = findViewById(R.id.listviewmanhinhchinh);
         listViewNew = findViewById(R.id.listviewNew);
 
         // Thông tin tài khoản

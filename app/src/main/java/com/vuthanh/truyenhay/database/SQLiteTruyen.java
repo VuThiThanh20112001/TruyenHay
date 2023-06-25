@@ -18,8 +18,16 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
             "noidung TEXT," +
             "tacgia TEXT" +
             ");";
-    private String SQLite1 = "INSERT INTO Truyen VALUES (1,'Sơn hải cao trung', 'Ngôn tình','Ngày xửa ngày xưa','Gotouge Koyoharu')";
-    private String SQLite2 = "INSERT INTO Truyen VALUES (3,'Nguyên tôn', 'Kiếm hiệp','Bên trong nội điện đèn đuốc sáng trưng, xa hoa tráng lệ, khí thế uy nghiêm, bên trong điện có thắp trường minh đăng, bên trong đang đốt một viên đá xanh, khói xanh lượn lờ bay lên, vấn vít trong điện.\n" +
+    private String SQLite1 = "INSERT INTO Truyen VALUES (1,'HẠ VI CHU MINH', 'Ngôn tình','Đêm Hạ.\n" +
+            "\n" +
+            "Tiếng ho khan đứt quãng từ bên trong màn truyền ra, kèm theo đó là tiếng thở dốc yếu ớt. Một lúc sau, tiếng ho khan mới dần dần ngừng lại, tiếp đó một bàn tay thon dài nhưng tái nhợt từ trong màn vươn ra, nhẹ nhàng vén tấm màn lên.\n" +
+            "\n" +
+            "Hiện tại đang là giữa mùa Hạ, không khí oi bức và nhớp nháp, nhưng trên giường lại được bao phủ bởi một lớp chăn dày tựa như những ngày trời đông lạnh lẽo. Người trên giường do dự một lúc, cuối cùng vẫn chọn tự mình xuống giường mà không đánh thức gã sai vặt đang nghỉ ngơi ở bên ngoài phòng.\n" +
+            "\n" +
+            "Tư Liên chậm rãi đi đến trước bàn, vươn tay rót cho mình một ly nước rồi uống một hơi cạn sạch, sau đó cảm thấy không đủ lại rót thêm ly nữa. Mới vừa rồi hắn vì ho mà tỉnh giấc, cổ họng ngứa vô cùng, uống cạn hai ly nước lập tức cảm thấy dễ chịu hơn rất nhiều.\n" +
+            "\n" +
+            "Đột nhiên cảm thấy bên tai thoáng qua một chút mát lạnh. Tư Liên nghiêng người, nhìn thấy trong phòng có một cánh cửa sổ còn chưa được khép chặt, gió đêm mang theo hơi nước mát lạnh khẽ lẻn vào phòng hắn qua khe hở đó. Mùi thuốc Đông y đắng ngắt trong phòng bỗng chốc nhạt đi không ít.','Khúc An Nhị Hào')";
+    private String SQLite2 = "INSERT INTO Truyen VALUES (2,'Nguyên tôn', 'Kiếm hiệp','Bên trong nội điện đèn đuốc sáng trưng, xa hoa tráng lệ, khí thế uy nghiêm, bên trong điện có thắp trường minh đăng, bên trong đang đốt một viên đá xanh, khói xanh lượn lờ bay lên, vấn vít trong điện.\n" +
             "\n" +
             "Đó chính là thanh đàn thạch, khi đốt cháy sẽ tỏa ra một hương thơm lạ lùng, có hiệu quả ngưng thần tĩnh khí, là vật cần chuẩn bị cho những lúc tu luyện, bất quá giá cả của thứ này cũng không rẻ, có thể dùng nó như một loại hương liệu thế này, đủ để nói rõ chủ nhân của nơi đây có địa vị không tầm thường.\n" +
             "\n" +
@@ -28,8 +36,42 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
             "Chẳng qua, nếu như nhìn về phía cánh tay phải của hắn thì sẽ phát hiện nó trống không, bởi vì đã cụt một tay.\n" +
             "\n" +
             "Còn có một mỹ phụ vận cung trang đứng bên cạnh hắn, nàng có thân hình mảnh mai, dung mạo xinh đẹp lại thong dong, bất quá trên mặt nàng vẫn lộ ra vẻ suy yếu nhợt nhạt.','Thiên Tằm Thổ Đậu')";
-
-
+    private String SQLite3 = "INSERT INTO Truyen VALUES (3,'ĐỘC TÔN TAM GIỚI', 'Tiên hiệp','Giang Trần cảm giác dường như trong đầu mình loạn thành một đoàn bột nhão, cảm giác này giống như là đang nằm mơ, nhưng nằm mơ thì không thể nào chân thật đến mức này được. Mỗi một tấc da thịt quanh thân, mỗi một khối xương cốt, đều đau đớn không chịu nổi.\n" +
+            "\n" +
+            "- Ta đã chết rồi sao? Đang chịu nỗi khổ luyện thân trong mấy tầng địa ngục sao ?\n" +
+            "\n" +
+            "Trực giác đầu tiên của Giang Trần là cảm giác mình đã chết. Thế nhưng, Sinh Mệnh Khí Tức như có như không của thân thể, lại phảng phất đang nhắc nhở hắn, hắn còn sống.\n" +
+            "\n" +
+            "Cũng không biết cảm giác như vậy giằng co bao lâu. Trong giây lát, Giang Trần cố gắng mở mắt ra, lại phát hiện mình nằm ở trong một bộ quan tài.\n" +
+            "\n" +
+            "\n" +
+            "Nằm ở trong quan tài? Nói như vậy, mình là thật đã chết? Giang Trần lòng tràn đầy bi thương.\n" +
+            "\n" +
+            "- Đáng tiếc đáng buồn, Giang Trần ta thân là Thiên Đế chi tử, lại trời sinh Thái Âm Chi Thể, không thể tu luyện võ đạo. Dù có phụ hoàng luyện chế Nhật Nguyệt Thần Đan cho ta, để cho ta thọ cùng trời đất, kết quả Thiên Đạo hạo kiếp buông xuống, lại thành vướng víu của phụ thân, cuối cùng tránh không được vận mệnh bỏ mình. . .\n" +
+            "\n" +
+            "- Ồ? Kinh mạch của ta là chuyện gì xảy ra? Thậm chí có chân khí chạy! Tuy rất nhỏ. . . Không đúng! Cái này. . . Đây không phải thân thể của ta, đây tuyệt đối không phải là nhục thể của ta! Ta trời sinh Thái Âm Chi Thể, trong cơ thể làm sao có thể có chân khí du động?','Lê Thiên')";
+    private String SQLite4 = "INSERT INTO Truyen VALUES (4,'AI ĐÃ ĐỘNG TỚI CÂY XƯƠNG RỒNG CỦA TÔI', 'Hài hước','“Ai vặt hết gai cây xương rồng của tôi?”\n" +
+            "\n" +
+            "Hình ảnh đính kèm là một chậu xương rồng trụi gai.\n" +
+            "\n" +
+            "Sau khi tiện tay lướt tới “lệnh truy nã” trên diễn đàn trường, tôi như cá chép lộn người, từ kẻ đang hấp hối trên giường bệnh bật dậy.\n" +
+            "\n" +
+            "Hôm qua tôi vừa đi vừa chửi tên sở khanh khốn kiếp qua điện thoại. Lúc đi ngang ký túc xá nam thì tiện tay gây hại cho cây xanh ngoài ban công tầng một. Nhưng tôi đã để lại phương thức liên lạc nói mình sẽ bồi thường.\n" +
+            "\n" +
+            "Có lẽ tờ giấy bị gió cuốn bay mất, đệt mợ cũng may là bị thổi bay rồi, ai mà biết cây đó là của trùm trường Yến Tử An chứ!\n" +
+            "\n" +
+            "Tay run rẩy, bình luận dưới bài đăng: “Thuần túy là khách qua đường, hình như gai xương rồng sẽ tự nhiên rụng, nén bi thương, tôi là người qua đường thuần túy thôi nhé.”\n" +
+            "\n" +
+            "\n" +
+            "Yến Tử An nhanh chóng trả lời: “Vậy cây sen đá bên cạnh nó cũng tự nhiên mọc gai lên à?”\n" +
+            "\n" +
+            "Hình ảnh đi kèm là một chậu sen đá đầy gai.\n" +
+            "\n" +
+            "Khu bình luận lập tức xuất hiện không ít quần chúng vây xem, sôi nổi bênh vực kẻ yếu:\n" +
+            "\n" +
+            "“Thế gian suy đồi, lòng người không đổi.”\n" +
+            "\n" +
+            "“Ha ha ha ha ha vừa tội vừa buồn cười.”','Zhihu')";
     //1.Hàm tạo csdl
     public SQLiteTruyen(@Nullable Context context) {
         super(context, "QLTruyen.db", null, 1);
@@ -41,6 +83,10 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_Truyen);//Lệnh tạo bảng truyện
         sqLiteDatabase.execSQL(SQLite1);
         sqLiteDatabase.execSQL(SQLite2);
+        sqLiteDatabase.execSQL(SQLite3);
+        sqLiteDatabase.execSQL(SQLite4);
+
+
 
     }
     public Cursor getData(){

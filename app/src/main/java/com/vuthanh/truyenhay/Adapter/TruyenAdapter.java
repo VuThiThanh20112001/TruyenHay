@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.vuthanh.truyenhay.Activity.MainActivity;
 import com.vuthanh.truyenhay.Model.Truyen;
 import com.vuthanh.truyenhay.Model.TruyenTC;
 import com.vuthanh.truyenhay.R;
@@ -45,7 +46,7 @@ public class TruyenAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public class ViewHolder{
+    public static class ViewHolder{
         TextView txtTenTruyen;
         ImageView imgtruyen;
 

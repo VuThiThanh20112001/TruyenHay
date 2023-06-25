@@ -91,12 +91,15 @@ public class MainActivity extends AppCompatActivity {
         listViewNew.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent(MainActivity.this, NoiDungActivity.class);
                 String tentruyen = truyenArrayList.get(position).getTieude();
                 String noidung = truyenArrayList.get(position).getNoidung();
                 intent.putExtra("tentruyen",tentruyen);
                 intent.putExtra("noidung",noidung);
+
                 startActivity(intent);
+
             }
         });
 
@@ -219,15 +222,15 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(ChuyenMucAdapter);
 
         //add truyện
-        Cursor cursor = sqLiteTruyen.getData();
         truyenArrayList = new ArrayList<>();
+        Cursor cursor = sqLiteTruyen.getData();
+
         while (cursor.moveToNext()) {
             String id = cursor.getString(0);
             String ten = cursor.getString(1);
             String theloai = cursor.getString(2);
             String noidung = cursor.getString(3);
             String tacgia = cursor.getString(4);
-
 
             truyenArrayList.add(new Truyen(id,ten,theloai,noidung,tacgia, R.drawable.sonhaicaotrung));
             truyenAdapter = new TruyenAdapter(getApplicationContext(), truyenArrayList);
@@ -259,4 +262,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

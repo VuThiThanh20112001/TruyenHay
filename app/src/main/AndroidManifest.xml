@@ -47,6 +47,9 @@
             android:name=".Activity.DangKyActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.NoiDungActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DangNhapActivity"
             android:exported="true">
             <intent-filter>

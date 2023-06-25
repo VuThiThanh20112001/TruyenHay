@@ -164,36 +164,24 @@ public class MainActivity extends AppCompatActivity {
     }
     private void ActionViewFlipper() {
         //mảng chứa ảnh
-//        ArrayList<String> arrayList = new ArrayList<>();
-//        // add ảnh
-//        arrayList.add("https://nettruyen.net.vn/manager/uploads/anhdaidien/doremon-truyen-dai.jpg");
-//        arrayList.add("https://nettruyen.net.vn/manager/uploads/anhdaidien/dai-tien-tong-dung-khoa-hoc-ky-thuat.jpg");
-//        arrayList.add("https://nettruyen.net.vn/manager/uploads/anhdaidien/nghich-thien-kiem-than_1554042567.jpggfhdfgdfgampmobile2");
-//        arrayList.add("https://nettruyen.net.vn/truyen-chu/uploads/anhdaidien/doan-sung-tieu-tac-tinh-trong-sinh-thanh-man-cap-dai-lao.jpg");
-//        arrayList.add("https://nettruyen.net.vn/manager/uploads/anhdaidien/lai-gap-duoc-em_1566101787.jpggfhdfgdfgampmobile2");
+        int[] arrayhinh = {R.drawable.hinh1,R.drawable.hinh2,R.drawable.hinh3,R.drawable.hinh4};
 
-        List<String> img = Arrays.asList("https://nettruyen.net.vn/manager/uploads/anhdaidien/doremon-truyen-dai.jpg",
-                "https://nettruyen.net.vn/manager/uploads/anhdaidien/dai-tien-tong-dung-khoa-hoc-ky-thuat.jpg",
-                "https://nettruyen.net.vn/manager/uploads/anhdaidien/lai-gap-duoc-em_1566101787.jpggfhdfgdfgampmobile2"
-         );
-//        for (int i=0; i<img.size(); i++) {
-        for (String im : img) {
-//            ImageView imageView = new ImageView(getApplicationContext());
-            ImageView imageView = new ImageView(this);
-//            Picasso.get().load(arrayList.get(i)).into(imageView);
-            Picasso.get().load(im).fit().centerCrop().into(imageView);
+        for (int i=0; i<arrayhinh.length; i++) {
+            ImageView imageView = new ImageView(getApplicationContext());
+            //Picasso.get().load(arrayList.get(i)).into(imageView);
+            imageView.setImageResource(arrayhinh[i]);
             // chỉnh ảnh vừa khung
-            //imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             // thêm ảnh vào viewflipper
             viewFlipper.addView(imageView);
         }
         viewFlipper.setFlipInterval(4000);
         viewFlipper.setAutoStart(true);
-        viewFlipper.startFlipping();
-//        Animation animation_slide_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in_right);
-//        Animation animation_slide_out = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_out_right);
-//        viewFlipper.setInAnimation(animation_slide_in);
-//        viewFlipper.setInAnimation(animation_slide_out);
+//        viewFlipper.startFlipping();
+        Animation animation_slide_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in_right);
+        Animation animation_slide_out = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_out_right);
+        viewFlipper.setInAnimation(animation_slide_in);
+        viewFlipper.setInAnimation(animation_slide_out);
     }
 
     private void AnhXa(){

@@ -7,27 +7,18 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.vuthanh.truyenhay.Adapter.SelectedAdapter;
 import com.vuthanh.truyenhay.Model.Admin;
-import com.vuthanh.truyenhay.Model.Selected;
-import com.vuthanh.truyenhay.Model.TaiKhoan;
 import com.vuthanh.truyenhay.R;
 import com.vuthanh.truyenhay.database.database_dangnhap;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AddTaiKhoanActivity extends AppCompatActivity {
 
-    private Spinner spnPhanQuyen;
-    private SelectedAdapter selectedAdapter;
 
     EditText editTaiKhoan, editEmail, editMatKhau, editPhanQuyen;
     Button btnThemTaiKhoan;
@@ -44,28 +35,14 @@ public class AddTaiKhoanActivity extends AppCompatActivity {
 
         database_dangnhap = new database_dangnhap(this);
 
-      //  spnPhanQuyen = findViewById(R.id.spn_phanquyen);
+
         editTaiKhoan = findViewById(R.id.editTaiKhoan);
         editEmail = findViewById(R.id.editEmail);
         editMatKhau = findViewById(R.id.editMatKhau);
         editPhanQuyen = findViewById(R.id.editPhanQuyen);
         btnThemTaiKhoan = findViewById(R.id.btnThemTaiKhoan);
 
-//        selectedAdapter = new SelectedAdapter(this, R.layout.item_selected, getListSelected());
-//        spnPhanQuyen.setAdapter(selectedAdapter);
-//
-//
-//        spnPhanQuyen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(AddTaiKhoanActivity.this, selectedAdapter.getItem(position).getPhanquyen(), Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
+
 
         btnThemTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,15 +54,6 @@ public class AddTaiKhoanActivity extends AppCompatActivity {
 
     }
 
-//    private List<Selected> getListSelected(){
-//        List<Selected> list = new ArrayList<>();
-//
-//        list.add(new Selected("1"));
-//        list.add(new Selected("2"));
-//
-//        return list;
-//
-//    }
 
     private void DialogAdd(){
 
@@ -152,7 +120,7 @@ public class AddTaiKhoanActivity extends AppCompatActivity {
         String emailadmin = editEmail.getText().toString().trim();
         String matkhauadmin = editMatKhau.getText().toString().trim();
         String phanquyenadmin = editPhanQuyen.getText().toString().trim();
-      //  String phanquyenadmin = spnPhanQuyen.getSelectedItem().toString().trim();
+
 
         Admin admin = new Admin(tenadmin,emailadmin,matkhauadmin,phanquyenadmin);
 

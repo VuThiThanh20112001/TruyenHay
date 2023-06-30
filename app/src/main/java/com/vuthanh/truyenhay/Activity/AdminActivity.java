@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ public class AdminActivity extends AppCompatActivity {
 
     ArrayList<TaiKhoan> taiKhoanArrayList;
 
-    ImageView imgQuayLai;
+    ImageButton imgQuayLai;
     DrawerLayout drawerLayout;
 
     @SuppressLint("MissingInflatedId")
@@ -61,7 +62,7 @@ public class AdminActivity extends AppCompatActivity {
         listViewAdmin = findViewById(R.id.listViewAdmin);
 
         btnAddAdmin = findViewById(R.id.btnAddAdmin);
-//        imgQuayLai = findViewById(R.id.imgQuayLai);
+        imgQuayLai = findViewById(R.id.imgQuayLai);
 
 
         // Nhận dữ liệu đăng nhập gửi
@@ -97,26 +98,14 @@ public class AdminActivity extends AppCompatActivity {
         cursor.moveToFirst();
         cursor.close();
 
+        imgQuayLai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        // Thông tin tài khoản
-//        taiKhoanArrayList = new ArrayList<>();
-//        taiKhoanArrayList.add(new TaiKhoan(tentaikhoan));
-//
-//        TaiKhoanAdapter = new TaiKhoanAdapter(this,R.layout.activity_personal,taiKhoanArrayList);
+            }
+        });
 
 
-//        imgQuayLai.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                drawerLayout.openDrawer(GravityCompat.START);
-//
-////                Intent intent = new Intent(AdminActivity.this, ActionBar.class);
-////                // Gửi id tài khoản qua màn User
-////               // intent.putExtra("Id",idd);
-////                startActivity(intent);
-//            }
-//        });
 
 
     }

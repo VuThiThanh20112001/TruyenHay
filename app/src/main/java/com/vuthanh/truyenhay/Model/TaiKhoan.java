@@ -11,15 +11,18 @@ public class TaiKhoan {
     private int mPhanQuyen;
 
     // Hàm khởi tạo
+
+
     public TaiKhoan(String mTenTaiKhoan) {
+        this.mTenTaiKhoan = mTenTaiKhoan;
+    }
+
+    public TaiKhoan(String mTenTaiKhoan, String mEmail, String mMatKhau, int mPhanQuyen) {
         this.mTenTaiKhoan = mTenTaiKhoan;
         this.mEmail = mEmail;
         this.mMatKhau = mMatKhau;
         this.mPhanQuyen = mPhanQuyen;
     }
-
-
-
 
     public int getmId() {
         return mId;

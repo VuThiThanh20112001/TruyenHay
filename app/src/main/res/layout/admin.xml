@@ -27,7 +27,7 @@
         android:layout_marginLeft="10dp"
 
         android:contentDescription="HienThi"
-        android:src="@drawable/ic_subject"></ImageButton>
+        android:src="@drawable/xem_thong_tin"></ImageButton>
 
 
         <ImageButton

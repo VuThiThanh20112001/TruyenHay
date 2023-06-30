@@ -107,31 +107,7 @@
     </LinearLayout>
 
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        >-->
 
-<!--        <TextView-->
-<!--            android:layout_marginLeft="30dp"-->
-<!--            android:textSize="19dp"-->
-<!--            android:text="Phân quyền"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"></TextView>-->
-
-
-<!--        <Spinner-->
-<!--            android:id="@+id/spn_phanquyen"-->
-<!--            android:background="@drawable/vien"-->
-<!--            android:padding="13dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="30dp"></Spinner>-->
-
-
-<!--    </LinearLayout>-->
 
     <LinearLayout
 

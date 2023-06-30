@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(position == 1){
                     if(i == 1){
-                        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                        Intent intent = new Intent(MainActivity.this, TruyenActivity.class);
                         // Gửi id tài khoản qua màn User
                         intent.putExtra("Id",idd);
                         startActivity(intent);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } else if (position == 2) {
                     if(i == 1){
-                        Intent intent = new Intent(MainActivity.this,TruyenActivity.class);
+                        Intent intent = new Intent(MainActivity.this,AdminActivity.class);
                         startActivity(intent);
 
                     }else {
@@ -135,7 +135,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else if (position == 3) {
-                    finish();
+                    Intent intent = new Intent(MainActivity.this,DangNhapActivity.class);
+                    startActivity(intent);
 
                 }
             }
@@ -206,8 +207,8 @@ public class MainActivity extends AppCompatActivity {
         //Chuyên mục
         chuyenMucArrayList = new ArrayList<>();
         chuyenMucArrayList.add(new ChuyenMuc("Thể loại truyện", R.drawable.theloai));
-        chuyenMucArrayList.add(new ChuyenMuc("Người dùng", R.drawable.person));
         chuyenMucArrayList.add(new ChuyenMuc("Đăng bài", R.drawable.post));
+        chuyenMucArrayList.add(new ChuyenMuc("Người dùng", R.drawable.person));
         chuyenMucArrayList.add(new ChuyenMuc("Đăng xuất", R.drawable.log_out));
 
         ChuyenMucAdapter = new ChuyenMucAdapter(this,R.layout.chuyenmuc,chuyenMucArrayList);

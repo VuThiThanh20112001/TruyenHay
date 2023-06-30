@@ -107,10 +107,10 @@ public class DangNhapActivity extends AppCompatActivity {
 
                     }
                     // nếu đầy đủ thông tin nhập vào thì add tài khoản vào database
-                    else {
-                        Toast.makeText(DangNhapActivity.this, "Đăng nhập không thành công",Toast.LENGTH_SHORT).show();
-
-                    }
+//                    else {
+//                        Toast.makeText(DangNhapActivity.this, "Đăng nhập không thành công",Toast.LENGTH_SHORT).show();
+//
+//                    }
 
 
                 }

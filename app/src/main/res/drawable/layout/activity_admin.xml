@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.AdminActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app"
+        android:orientation="horizontal"
+        android:gravity="center"
+       >
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgQuayLai"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:src="@drawable/ic_back_white"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="40dp"></ImageView>-->
+
+        <TextView
+            android:id="@+id/textView4"
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_app"
+            android:gravity="center_vertical"
+            android:text="Admin Dashbroad"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:padding="15dp"/>
+        
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/listViewAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:layout_marginTop="30dp"></ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+       >
+
+        <Button
+            android:id="@+id/btnAddAdmin"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Add Admin"
+            android:textColor="#ffffff"
+            android:background="@drawable/button"
+            android:textSize="18dp"></Button>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

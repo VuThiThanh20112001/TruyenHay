@@ -50,6 +50,12 @@
             android:name=".Activity.NoiDungActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.TheloaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Theloai1Activity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DangNhapActivity"
             android:exported="true">
             <intent-filter>

@@ -109,20 +109,22 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
+                if(position == 0) {
+                    Intent intent = new Intent(MainActivity.this,TheloaiActivity.class);
+                    startActivity(intent);
+                }
+                else if(position == 1){
                     if(i == 1){
                         Intent intent = new Intent(MainActivity.this, AdminActivity.class);
-                       // Gửi id tài khoản qua màn User
+                        // Gửi id tài khoản qua màn User
                         intent.putExtra("Id",idd);
                         startActivity(intent);
-
-
 
                     }else{
                         Toast.makeText(MainActivity.this, "Bạn không có quyền truy cập",Toast.LENGTH_SHORT).show();
                         Log.e("Người dùng : ", "Bạn không có quyền truy cập");
                     }
-                } else if (position == 1) {
+                } else if (position == 2) {
                     if(i == 1){
                         Intent intent = new Intent(MainActivity.this,TruyenActivity.class);
                         startActivity(intent);
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("Đăng bài : ", "Bạn không có quyền truy cập");
                     }
 
-                } else if (position == 2) {
+                } else if (position == 3) {
                     finish();
 
                 }
@@ -164,7 +166,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void ActionViewFlipper() {
         //mảng chứa ảnh
-        int[] arrayhinh = {R.drawable.hinh1,R.drawable.hinh2,R.drawable.hinh3,R.drawable.hinh4};
+        int[] arrayhinh = {R.drawable.hinh1,R.drawable.hinh2,R.drawable.hinh3,R.drawable.hinh4,R.drawable.hinh5,
+                R.drawable.hinh7,R.drawable.hinh8,R.drawable.hinh9};
 
         for (int i=0; i<arrayhinh.length; i++) {
             ImageView imageView = new ImageView(getApplicationContext());
@@ -202,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Chuyên mục
         chuyenMucArrayList = new ArrayList<>();
+        chuyenMucArrayList.add(new ChuyenMuc("Thể loại truyện", R.drawable.theloai));
         chuyenMucArrayList.add(new ChuyenMuc("Người dùng", R.drawable.person));
         chuyenMucArrayList.add(new ChuyenMuc("Đăng bài", R.drawable.post));
         chuyenMucArrayList.add(new ChuyenMuc("Đăng xuất", R.drawable.log_out));

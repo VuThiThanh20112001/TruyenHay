@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.TimKiemActivity"
+    android:layout_marginHorizontal="15dp">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_search">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_search"
+            android:src="@drawable/ic_search1" />
+
+        <EditText
+            android:id="@+id/edt_timkiem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="36dp"
+            android:backgroundTint="@color/color_text_search"
+            android:hint="Tìm kiếm truyện"
+            android:textColorHint="@color/black"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/color_text_search"
+            android:textSize="12sp" />
+    </FrameLayout>
+    <ListView
+        android:id="@+id/lisv_truyen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/white"
+        android:dividerHeight="8dp"/>
+
+</LinearLayout>

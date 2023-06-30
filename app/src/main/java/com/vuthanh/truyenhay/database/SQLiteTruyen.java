@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 
 public class SQLiteTruyen extends SQLiteOpenHelper {
     private static String TABLE_NAME = "Truyen";
+    private static String THELOAI = "theloai";
+
 
     //lệnh tạo bảng
     public static final String SQL_Truyen="CREATE TABLE Truyen (" +
@@ -72,6 +74,22 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
             "“Thế gian suy đồi, lòng người không đổi.”\n" +
             "\n" +
             "“Ha ha ha ha ha vừa tội vừa buồn cười.”','Zhihu')";
+    private String SQLite5 = "INSERT INTO Truyen VALUES (5,'PHÁP SƯ MẠNH NHẤT', 'Phương tây','Đêm tối, trong một khu rừng nhiều quỷ thú, một cậu bé tầm 12 tuổi, dáng người nhỏ nhắn đang ôm một cánh tay chảy máu mà cố chạy.\n" +
+            "\n" +
+            "Phía sau cậu, một bọn áo đen đang phóng như bay đuổi theo.\n" +
+            "\n" +
+            "Cậu bé thở từng hơi đứt quoảng, máu từ cánh tay trái chảy ra ướt đẩm cả áo.Tên cậu là Mike John, đứa con của gia tộc pháp sư.','Lý Hồ Ân')";
+    private String SQLite6 = "INSERT INTO Truyen VALUES (6,'Chó sói và cậu bé chăn cừu', 'Thiếu nhi','Truyện ngắn thiếu nhi hay này kể về cậu bé nọ sống cùng cha trong một ngôi làng. Công việc của cậu là chăn bầy cừu giúp cha mình. Hằng ngày, cậu đưa bầy cừu lên sườn đồi để chúng gặm cỏ, chiều đến lại lùa cừu về. Công việc cứ thế lặp đi lặp lại nên cậu không mấy vui vẻ.\n" +
+            "\n" +
+            "Một ngày nọ, cậu nảy ra ý tưởng trêu đùa mọi người và liền hét to:\n" +
+            "\n" +
+            "– Sói! Sói! Có chó sói…\n" +
+            "\n" +
+            "Tiếng la ấy làm kinh động đến những người trong làng và họ liền đổ xô chạy ra để đuổi bọn sói. Khi đến nơi, mọi người mới vỡ lẽ rằng chẳng có con sói nào cả. Biết mình bị lừa, mọi người ai nấy trở về nhà trong sự bực dọc.\n" +
+            "\n" +
+            "Nhưng rồi điều không may đã xảy ra với cậu bé kia khi bỗng một ngày, lũ sói từ đâu xuất hiện và tấn công đàn cừu. Cậu bé kêu cứu nhưng không một ai đáp lại. Bởi lẽ, mọi người nghĩ rằng, hẳn đây là một trò đùa tai quái của cậu nên chẳng ai bận tâm. Kết cuộc là cậu bé ấy đành bất lực chứng kiến bầy cừu trở thành bữa ăn của đàn sói hoang tàn độc.\n" +
+            "\n" +
+            "Bài học rút ra từ truyện ngắn thiếu nhi Chó sói và cậu bé chăn cừu: Được xếp là một trong những truyện ngắn thiếu nhi hay, chó sói và cậu bé chăn cừu mang đến cho bé một bài học: hãy luôn luôn trung thực trong mọi tình huống.','')";
     //1.Hàm tạo csdl
     public SQLiteTruyen(@Nullable Context context) {
         super(context, "QLTruyen.db", null, 1);
@@ -85,7 +103,8 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQLite2);
         sqLiteDatabase.execSQL(SQLite3);
         sqLiteDatabase.execSQL(SQLite4);
-
+        sqLiteDatabase.execSQL(SQLite5);
+        sqLiteDatabase.execSQL(SQLite6);
 
 
     }
@@ -98,6 +117,12 @@ public class SQLiteTruyen extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Truyen");
+    }
+
+    public Cursor getData1(String i) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(" SELECT * FROM " + TABLE_NAME + " WHERE " + THELOAI + " ='"+i+"'", null);
+        return cursor;
     }
 
 }

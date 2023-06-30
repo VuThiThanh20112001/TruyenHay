@@ -32,12 +32,14 @@
             android:textColorHint="@color/black"
             android:lines="1"
             android:maxLines="1"
-            android:textColor="@color/color_text_search"
+            android:textColor="@color/black"
             android:textSize="12sp" />
     </FrameLayout>
     <ListView
         android:id="@+id/lisv_truyen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:divider="@android:color/white"
+        android:dividerHeight="10dp"/>
 
 </LinearLayout>

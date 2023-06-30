@@ -101,7 +101,8 @@ public class AdminActivity extends AppCompatActivity {
         imgQuayLai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(AdminActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

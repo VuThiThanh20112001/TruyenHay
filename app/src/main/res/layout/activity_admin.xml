@@ -24,7 +24,8 @@
             android:layout_marginRight="30dp"
             android:contentDescription="Quay la"
             android:padding="12dp"
-            android:src="@drawable/ic_back_white"></ImageButton>
+            android:src="@drawable/ic_back_white"
+            android:background="@color/color_app"></ImageButton>
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imgQuayLai"-->

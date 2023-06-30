@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.vuthanh.truyenhay.Adapter.TheloaiAdapter;
 import com.vuthanh.truyenhay.Model.Theloai;
 import com.vuthanh.truyenhay.R;
-import com.vuthanh.truyenhay.Ultil.CheckConnection;
+
 
 import java.util.ArrayList;
 

@@ -96,14 +96,14 @@ public class DangNhapActivity extends AppCompatActivity {
                         //Chuyển qua màn hình AdminActivity
                         Toast.makeText(getApplicationContext(), "Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(DangNhapActivity.this, MainActivity.class);
-                        startActivity(intent);
+
                         //gửi dữ liệu qua Activity là  MainActivity
                         intent.putExtra("phanq",phanquyen);
                         intent.putExtra("idd",idd);
                         intent.putExtra("email",emailtk);
                         intent.putExtra("tentaikhoan",tentk);
 
-
+                        startActivity(intent);
 
                     }
                     // nếu đầy đủ thông tin nhập vào thì add tài khoản vào database

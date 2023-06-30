@@ -15,15 +15,20 @@ import com.vuthanh.truyenhay.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class TruyenAdapter extends BaseAdapter {
 
     private Context context;
     private List<Truyen> listTruyen;
+    private ArrayList<Integer> imageList;
+    private Random random;
+
 
     public TruyenAdapter(Context context, List<Truyen> listTruyen) {
         this.context = context;
         this.listTruyen = listTruyen;
+        random = new Random();
     }
 
     @Override
@@ -65,7 +70,20 @@ public class TruyenAdapter extends BaseAdapter {
 
         Truyen truyen = listTruyen.get(position);
         viewHolder.txtTenTruyen.setText(truyen.getTieude());
-       // viewHolder.imgtruyen.setImageResource(truyen.getHinh());
+
+        imageList = new ArrayList<>();
+        imageList.add(R.drawable.hinh1);
+        imageList.add(R.drawable.hinh2);
+        imageList.add(R.drawable.hinh3);
+        imageList.add(R.drawable.hinh4);
+        imageList.add(R.drawable.hinh5);
+        imageList.add(R.drawable.hinh7);
+        imageList.add(R.drawable.hinh8);
+        imageList.add(R.drawable.hinh9);
+
+        int randomImage = imageList.get(random.nextInt(imageList.size()));
+
+        viewHolder.imgtruyen.setImageResource(randomImage);
 
         return convertView;
     }
